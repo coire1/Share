@@ -28,7 +28,8 @@ public class Share extends CordovaPlugin {
 		sendIntent.setType(mimeType);
 		sendIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
 		sendIntent.putExtra(android.content.Intent.EXTRA_TEXT, text);
-		sendIntent.putExtra(android.content.Intent.EXTRA_STREAM, parsedUri);
+		if(!mimeType.equals("text/plain"))
+			sendIntent.putExtra(android.content.Intent.EXTRA_STREAM, parsedUri);
 		this.cordova.startActivityForResult(this, sendIntent, 0);
 	}
 	

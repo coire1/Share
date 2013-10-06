@@ -16,7 +16,7 @@ Share.prototype = {
      * Open the Android share dialog.
      */
 	show: function (message, win, fail) {
-		var types = ["image/jpeg", "image/gif", "image/png", "image/bmp"];
+		var types = ["image/jpeg", "image/gif", "image/png", "image/bmp", "text/plain"];
 		if (types.join("|").indexOf(message.mimeType) < 0) {
 			return false;
 		}
